@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+dist-ssr/
+coverage/
+*.tsbuildinfo
+
+# Vite / tooling cache
+.vite/
+.cache/
+.eslintcache
+.stylelintcache
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+vite-dev.log
+vite-dev.err
+
+# Environment files with local secrets
+.env
+.env.local
+.env.*.local
+
+# Keep committed environment examples/configs
+!.env.localdev
+!.env.development
+!.env.production
+
+# Editor directories and files
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+tmp/
+temp/
+*.tmp

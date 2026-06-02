@@ -1,0 +1,148 @@
+@use './reset';
+@use './theme';
+@use './responsive';
+
+body {
+  min-width: 320px;
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 0 clamp(16px, 4vw, 48px);
+  background: var(--color-surface);
+}
+
+.app-header__brand {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-heading);
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-header__actions {
+  flex-shrink: 0;
+}
+
+.app-main {
+  min-height: calc(100vh - 64px);
+}
+
+.empty-layout {
+  min-height: 100vh;
+}
+
+.home-page {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+  padding: clamp(32px, 8vw, 96px) clamp(16px, 5vw, 64px);
+}
+
+.home-page__content {
+  width: min(100%, 1040px);
+  margin: 0 auto;
+}
+
+.home-page__label {
+  margin: 0 0 12px;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.home-page h1,
+.not-found-page h1,
+.login-page h1 {
+  margin: 0;
+  color: var(--color-heading);
+  line-height: 1.2;
+}
+
+.home-page h1 {
+  max-width: 760px;
+  font-size: clamp(36px, 7vw, 72px);
+}
+
+.home-page p {
+  max-width: 640px;
+  margin: 20px 0 0;
+  color: var(--color-muted);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.home-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.login-page,
+.not-found-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(47, 125, 109, 0.1), transparent 38%), var(--color-bg);
+}
+
+.login-page__panel {
+  width: min(100%, 420px);
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-panel);
+}
+
+.login-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.login-page__tip {
+  margin: 16px 0 0;
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.not-found-page {
+  text-align: center;
+}
+
+.not-found-page strong {
+  color: var(--color-primary);
+  font-size: 72px;
+  line-height: 1;
+}
+
+.not-found-page h1 {
+  margin: 16px 0 24px;
+  font-size: 28px;
+}

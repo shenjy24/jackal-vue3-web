@@ -1,0 +1,42 @@
+schema: spec-driven
+
+# Project context (optional)
+# This is shown to AI when creating artifacts.
+# Add your tech stack, conventions, style guides, domain knowledge, etc.
+# Example:
+#   context: |
+#     Tech stack: TypeScript, React, Node.js
+#     We use conventional commits
+#     Domain: e-commerce platform
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+context: |
+  默认使用中文编写 OpenSpec 文档、规格、设计说明和任务清单。
+  项目目标是建设用户侧 Vue3 基础框架，面向 C 端业务的长期独立维护。
+  技术栈优先采用 Vue 3、Vite、TypeScript、Vue Router、Pinia、Axios。
+  框架应保持轻量可扩展，目录组织按技术类型划分。
+  用户登录态采用 HttpOnly Cookie，由浏览器自动携带凭证；前端不在 localStorage 中保存 token。
+  暂不需要 SSR/SEO、复杂权限控制、refresh token 或重型工程约束。
+  需要支持国际化、亮/暗主题、本地/开发/生产环境配置，以及 PC + 移动端响应式适配。
+
+rules:
+  proposal:
+    - 使用中文编写。
+    - 聚焦变更动机、范围和影响，不展开具体实现细节。
+  design:
+    - 使用中文编写。
+    - 说明关键架构决策、目录结构、数据流和可扩展边界。
+  specs:
+    - 使用中文编写。
+    - 每个需求使用明确的 SHALL 语句和可验证场景。
+  tasks:
+    - 使用中文编写。
+    - 任务应按可实施顺序拆分，并覆盖验证步骤。
