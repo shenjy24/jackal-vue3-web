@@ -8,7 +8,7 @@ import axios, {
 import { appConfig } from '@/config/app'
 
 export interface ApiResponse<T = unknown> {
-  code: number
+  code: number | string
   data: T
   message?: string
 }
@@ -27,7 +27,13 @@ const http: AxiosInstance = axios.create({
 })
 
 http.interceptors.response.use(
-  (response: AxiosResponse<ApiResponse>) => response,
+  (response: AxiosResponse<ApiResponse>) => {
+    if (String(response.data.code) === '2000') {
+      return response
+    }
+
+    return Promise.reject(new Error(response.data.message || 'Request failed'))
+  },
   (error: AxiosError<ApiResponse>) => {
     const message = error.response?.data?.message || error.message || 'Request failed'
     return Promise.reject(new Error(message))
